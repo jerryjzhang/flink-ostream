@@ -315,7 +315,7 @@ public class TaskManagerRunner implements FatalErrorHandler, AutoCloseableAsync 
 			clusterConfiguration = commandLineParser.parse(args);
 		} catch (FlinkParseException e) {
 			LOG.error("Could not parse the command line options.", e);
-			commandLineParser.printHelp();
+			commandLineParser.printHelp(TaskManagerRunner.class.getSimpleName());
 			throw e;
 		}
 
@@ -348,6 +348,8 @@ public class TaskManagerRunner implements FatalErrorHandler, AutoCloseableAsync 
 		checkNotNull(resourceID);
 		checkNotNull(rpcService);
 		checkNotNull(highAvailabilityServices);
+
+		LOG.info("Starting TaskManager with ResourceID: {}", resourceID);
 
 		InetAddress remoteAddress = InetAddress.getByName(rpcService.getAddress());
 

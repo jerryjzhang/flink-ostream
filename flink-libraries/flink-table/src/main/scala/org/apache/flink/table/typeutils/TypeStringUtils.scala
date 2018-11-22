@@ -253,8 +253,6 @@ object TypeStringUtils extends JavaTokenParsers with PackratParsers {
             "A string representation for custom POJO types is not supported yet.")
       }
 
-    case _: CompositeType[_] =>
-      throw new TableException("A string representation for composite types is not supported yet.")
 
     case array: PrimitiveArrayTypeInfo[_] =>
       s"${PRIMITIVE_ARRAY.key}<${normalizeTypeInfo(array.getComponentType)}>"

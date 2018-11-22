@@ -18,12 +18,14 @@
 
 package org.apache.flink.table.typeutils
 
+
 import org.apache.flink.api.common.typeinfo.{PrimitiveArrayTypeInfo, BasicArrayTypeInfo, BasicTypeInfo, TypeInformation}
 import org.apache.flink.api.java.typeutils.{RowTypeInfo, TypeExtractor}
 import org.apache.flink.table.api.Types
 import org.apache.flink.table.runtime.utils.CommonTestData.{NonPojo, Person}
+
 import org.junit.Assert.{assertEquals, assertTrue}
-import org.junit.{Test}
+import org.junit.Test
 
 /**
   * Tests for string-based representation of [[TypeInformation]].
