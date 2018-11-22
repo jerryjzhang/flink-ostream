@@ -169,10 +169,10 @@ public abstract class KafkaTableSourceSinkFactoryBase implements
 			SchemaValidator.deriveRowtimeAttributes(descriptorProperties);
 
 		// see also FLINK-9870
-		if (proctime.isPresent() || !rowtimeAttributeDescriptors.isEmpty() ||
-				checkForCustomFieldMapping(descriptorProperties, schema)) {
-			throw new TableException("Time attributes and custom field mappings are not supported yet.");
-		}
+//		if (proctime.isPresent() || !rowtimeAttributeDescriptors.isEmpty() ||
+//				checkForCustomFieldMapping(descriptorProperties, schema)) {
+//			throw new TableException("Time attributes and custom field mappings are not supported yet.");
+//		}
 
 		return createKafkaTableSink(
 			schema,
