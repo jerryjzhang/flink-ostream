@@ -35,6 +35,28 @@ under the License.
 	<url>http://flink.apache.org</url>
 	<inceptionYear>2014</inceptionYear>
 
+	<!--Maven私服-->
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<url>http://nexus.os.adc.com/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>nexus-releases</name>
+			<url>http://nexus.os.adc.com/nexus/content/repositories/releases/</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>nexus-snapshots</name>
+			<url>http://nexus.os.adc.com/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
