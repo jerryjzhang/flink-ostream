@@ -633,6 +633,8 @@ case class WindowAggregate(
       case aggExpr: Aggregation
         if aggExpr.getSqlAggFunction.requiresOver =>
         failValidation(s"OVER clause is necessary for window functions: [${aggExpr.getClass}].")
+      case aggExpr: DistinctAgg =>
+        validateAggregateExpression(aggExpr.child)
       // check no nested aggregation exists.
       case aggExpr: Aggregation =>
         aggExpr.children.foreach { child =>
@@ -683,6 +685,20 @@ case class WindowAggregate(
     }
 
     resolvedWindowAggregate
+  }
+}
+
+case class TemporalTable(
+    timeAttribute: Expression,
+    primaryKey: Expression,
+    child: LogicalNode)
+  extends UnaryNode {
+
+  override def output: Seq[Attribute] = child.output
+
+  override protected[logical] def construct(relBuilder: RelBuilder): RelBuilder = {
+    throw new UnsupportedOperationException(
+      "This should never be called. This node is supposed to be used only for validation")
   }
 }
 
