@@ -26,7 +26,7 @@ under the License.
 	<parent>
 		<artifactId>flink-connectors</artifactId>
 		<groupId>org.apache.flink</groupId>
-		<version>ostream</version>
+		<version>ostream-1.7</version>
 		<relativePath>..</relativePath>
 	</parent>
 

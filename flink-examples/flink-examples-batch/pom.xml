@@ -24,7 +24,7 @@ under the License.
 	<parent>
 		<groupId>org.apache.flink</groupId>
 		<artifactId>flink-examples</artifactId>
-		<version>ostream</version>
+		<version>ostream-1.7</version>
 		<relativePath>..</relativePath>
 	</parent>
 

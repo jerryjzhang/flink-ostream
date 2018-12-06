@@ -38,7 +38,7 @@ under the License.
 
 	<groupId>org.apache.flink</groupId>
 	<artifactId>force-shading</artifactId>
-	<version>ostream</version>
+	<version>ostream-1.7</version>
 
 	<packaging>jar</packaging>
 
